@@ -1,0 +1,39 @@
+{
+  "name": "@01ai/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./identity": {
+      "types": "./dist/identity-engine.d.ts",
+      "default": "./dist/identity-engine.js"
+    },
+    "./lifecycle": {
+      "types": "./dist/lifecycle-engine.d.ts",
+      "default": "./dist/lifecycle-engine.js"
+    },
+    "./merkle": {
+      "types": "./dist/memory-merkle.d.ts",
+      "default": "./dist/memory-merkle.js"
+    },
+    "./memory-extraction": {
+      "types": "./dist/memory-extraction.d.ts",
+      "default": "./dist/memory-extraction.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "dev": "tsc -p tsconfig.json --watch"
+  },
+  "dependencies": {
+    "@01ai/types": "file:../types",
+    "@anthropic-ai/sdk": "^0.36.3"
+  }
+}
